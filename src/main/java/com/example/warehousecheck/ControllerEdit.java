@@ -44,7 +44,7 @@ public class ControllerEdit {
 
     @FXML
     public Button saveButton;
-
+    //Окно редактирования информации
     @FXML
     void initialize() {
         try {
@@ -52,6 +52,7 @@ public class ControllerEdit {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        //Кнопка "Сохранить"
         saveButton.setOnAction(actionEvent -> {saveButton.getScene().getWindow().hide();
             try {
                 toUpdate();
@@ -70,6 +71,7 @@ public class ControllerEdit {
             } catch (IOException e) {
                 e.printStackTrace();
             }});
+        //Кнопка "Назад"
         backButton.setOnAction(actionEvent -> {backButton.getScene().getWindow().hide();
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(ControllerMain.class.getResource("MainApplication.fxml"));
@@ -84,6 +86,7 @@ public class ControllerEdit {
                 e.printStackTrace();
             }});
     }
+    //Метод отображения информации
     public void toDisplay() throws Exception {
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cargobd", "root","Iklipop321KLP");
         String ch = String.format("select * from cargo WHERE id='%s'", ControllerMain.llist.get(ControllerMain.id));
@@ -95,6 +98,7 @@ public class ControllerEdit {
             locationText.setText(rs.getString(5));
         }
     }
+    //Метод обновления информации
     public void toUpdate() throws Exception {
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cargobd", "root","Iklipop321KLP");
         String ch = String.format("update cargo set Name= '%s',DateAllow= '%s', " +

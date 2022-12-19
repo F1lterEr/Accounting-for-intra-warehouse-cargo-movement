@@ -1,5 +1,6 @@
 package com.example.warehousecheck;
 
+//Данные о таблице в базе данных
 public class Const {
     public static final String CARGO_TABLE = "cargo";
     public static final String CARGO_ID = "id";

@@ -30,9 +30,10 @@ public class ControllerAuthorization {
 
     @FXML
     public TextField passwordtext;
-
+    //Окно авторизации
     @FXML
     void initialize() {
+        //Кнопка "Войти"
         loginbutton.setOnAction(event -> {
             if (logintext.getText().toString().equals("1") && passwordtext.getText().toString().equals("123")) {
                 loginbutton.getScene().getWindow().hide();

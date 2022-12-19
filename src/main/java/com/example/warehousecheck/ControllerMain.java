@@ -51,6 +51,7 @@ public class ControllerMain {
     @FXML
     public ListView<String> cargolist;
     ObservableList<String> list = FXCollections.observableArrayList();
+    //Главное окно
     @FXML
     void initialize() throws Exception{
         //Метод отображения груза в списке
@@ -129,7 +130,7 @@ public class ControllerMain {
         statement.execute();
         toDisplay();
     }
-
+    //Метод выбора груза из списка
     public void getSelected(MouseEvent mouseEvent) {
         try{
             int index = cargolist.getSelectionModel().getSelectedIndex();
@@ -144,6 +145,4 @@ public class ControllerMain {
             System.out.println(exception.getMessage());
         }
     }
-    //Метод выбора груза в списке
-
 }

@@ -1,7 +1,7 @@
 package com.example.warehousecheck;
 
 import java.sql.*;
-
+//Обработчик базы данных
 public class DatabaseHandler extends Cargo {
     Connection dbConnection;
     public Connection getDbConnection() throws ClassNotFoundException, SQLException{

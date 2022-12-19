@@ -39,9 +39,11 @@ public class ControllerAdd {
     @FXML
     private TextField nameText;
 
+    //Окно добавления груза
     @FXML
     void initialize() {
         DatabaseHandler dbhandler = new DatabaseHandler();
+        //Кнопка "Добавить"
         addButton.setOnAction(event -> {
             dbhandler.addCargo(nameText.getText(), dateallowText.getText(), datedeclaimedText.getText(),
                     locationText.getText());
@@ -59,6 +61,7 @@ public class ControllerAdd {
                 e.printStackTrace();
             }
         });
+        //Кнопка "Назад"
         backButton.setOnAction(actionEvent -> {backButton.getScene().getWindow().hide();
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(ControllerMain.class.getResource("MainApplication.fxml"));
