@@ -112,7 +112,7 @@ public class ControllerMain {
     public void toDisplay() throws Exception {
         list.clear();
         cargolist.setItems(list);
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cargobd", "root","Iklipop321KLP");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cargobd", "root","123");
         ResultSet rs = connection.createStatement().executeQuery("select * from cargo");
         llist.clear();
         while (rs.next()) {
@@ -124,7 +124,7 @@ public class ControllerMain {
     }
     //Метод удаления груза из списка
     public void toDelete(int id) throws Exception{
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cargobd", "root","Iklipop321KLP");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cargobd", "root","123");
         String sql = String.format("DELETE from cargo WHERE id='%s'", id);
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.execute();
