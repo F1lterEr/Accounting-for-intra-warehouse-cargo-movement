@@ -86,7 +86,7 @@ public class ControllerEdit {
     }
     public void toDisplay() throws Exception {
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cargobd", "root","Iklipop321KLP");
-        String ch = String.format("select * from cargo WHERE id='%s'", ControllerMain.identificator);
+        String ch = String.format("select * from cargo WHERE id='%s'", ControllerMain.llist.get(ControllerMain.id));
         ResultSet rs = connection.createStatement().executeQuery(ch);
         while (rs.next()) {
             nameText.setText(rs.getString(2));
@@ -100,7 +100,7 @@ public class ControllerEdit {
         String ch = String.format("update cargo set Name= '%s',DateAllow= '%s', " +
                         "DateDeclaime= '%s'," +
                         "Location= '%s' where id='%s'", nameText.getText(),
-                dateallowText.getText(), datedeclaimedText.getText(), locationText.getText(), ControllerMain.identificator);
+                dateallowText.getText(), datedeclaimedText.getText(), locationText.getText(), ControllerMain.llist.get((ControllerMain.id)));
         PreparedStatement statement = connection.prepareStatement(ch);
         statement.execute();
         toDisplay();

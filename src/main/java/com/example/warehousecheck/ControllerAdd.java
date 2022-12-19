@@ -68,6 +68,7 @@ public class ControllerAdd {
                 stage.setOpacity(1);
                 stage.setTitle("Проверка грузов");
                 stage.setScene(new Scene(root, 600, 486));
+                ControllerMain.llist.add(String.valueOf(ControllerMain.identificator + 1));
                 stage.show();
             } catch (IOException e) {
                 e.printStackTrace();
