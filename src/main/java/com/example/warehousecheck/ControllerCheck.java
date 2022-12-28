@@ -62,7 +62,7 @@ public class ControllerCheck {
     }
     //Метод отображения информации
     public void toDisplay() throws Exception {
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cargobd", "root","Iklipop321KLP");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cargobd", "root","123");
         String ch = String.format("select * from cargo WHERE id='%s'", ControllerMain.llist.get(ControllerMain.id));
         ResultSet rs = connection.createStatement().executeQuery(ch);
         while (rs.next()) {

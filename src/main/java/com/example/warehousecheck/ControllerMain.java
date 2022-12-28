@@ -101,7 +101,7 @@ public class ControllerMain {
         //Кнопка "Удалить"
         deleteButton.setOnAction(actionEvent -> {
             try {
-                toDelete(identificator);
+                toDelete(id);
                 toDisplay();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -138,7 +138,14 @@ public class ControllerMain {
                 return;
             }
             else{
-                id=index;
+                int idbd = Integer.parseInt(cargolist.getItems().get(index));
+                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cargobd", "root","123");
+                String ch = String.format("select id from cargo WHERE Name='%s'", idbd);
+                ResultSet rs = connection.createStatement().executeQuery(ch);
+                while (rs.next()){
+                    int ch2 = rs.getInt("id");
+                    id=ch2;
+                }
             }
         }
         catch (Exception exception){
